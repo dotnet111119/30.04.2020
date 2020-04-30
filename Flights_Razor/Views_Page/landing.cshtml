@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Landing page</title>
+	<link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body >
+	<div>
+	
+		<table border="1" class="table-striped" cellpadding="10" style="margin:30px">
+			<tr>
+				<th></th>
+				<th>ID</th>
+				<th>FROM</th>
+				<th>TO</th>
+				<th>REMAINING</th>
+			</tr>
+			@foreach (var flight in ViewBag.Flights)
+		{
+			<tr>
+				<td style="background:white"><img src="@flight.Pic" /></td>
+				<td>@flight.Id</td>
+				<td>@flight.From</td>
+				<td>@flight.To</td>
+				<td>@flight.Remaining</td>
+			</tr>
+	}
+		</table>
+		<br />
+		<a href="index" style="margin:30px">Go to registration form</a>
+	</div>
+</body>
+</html>
